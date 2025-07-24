@@ -1,24 +1,22 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-
-import { fileURLToPath, URL } from "url";
+import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   server: {
     proxy: {
-      '/api/v3': {
-        target: 'https://api.agendor.com.br/v3',
+      '/api': {
+        target: 'https://api.agendor.com.br',
         changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api\/v3/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

@@ -94,4 +94,3 @@ export const createAgendorService = (apiToken) => {
 };
 
 export default AgendorService;
-
