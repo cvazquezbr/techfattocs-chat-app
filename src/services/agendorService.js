@@ -84,11 +84,9 @@ class AgendorService {
     return `Lead gerado via formulário techFATTOcs:
     
 Empresa: ${formData.company || 'Não informado'}
+Necessidade: ${formData.need || 'Não informado'}
+Autoavaliação: ${formData.selfAssessment || 'Não informado'}
 Tamanho da equipe: ${formData.teamSize || 'Não informado'}
-Nível de necessidade: ${formData.needLevel || 'Não informado'}
-Urgência: ${formData.urgency || 'Não informado'}
-Outras pessoas envolvidas: ${formData.otherPeople || 'Não informado'}
-
 Data de captura: ${new Date().toLocaleString('pt-BR')}`;
   }
 
@@ -96,10 +94,10 @@ Data de captura: ${new Date().toLocaleString('pt-BR')}`;
   async sendLead(formData) {
     try {
       const personData = this.formatPersonData(formData);
-      
+
       // Usar upsert para evitar duplicatas
       const result = await this.upsertPerson(personData);
-      
+
       console.log('Lead enviado com sucesso para o Agendor:', result);
       return result;
     } catch (error) {

@@ -7,7 +7,8 @@ import { createAgendorService } from './services/agendorService';
 import './App.css';
 
 // Token da API do Agendor (em produção, isso deveria vir de variáveis de ambiente)
-const AGENDOR_API_TOKEN = process.env.REACT_APP_AGENDOR_TOKEN || null;
+// const AGENDOR_API_TOKEN = process.env.REACT_APP_AGENDOR_TOKEN || null;
+const AGENDOR_API_TOKEN = import.meta.env.VITE_AGENDOR_API_TOKEN || null;
 
 function App() {
   const [currentQuestionId, setCurrentQuestionId] = useState('welcome');
@@ -15,13 +16,12 @@ function App() {
   const [isTyping, setIsTyping] = useState(false);
   const [responses, setResponses] = useState({
     name: '',
+    need: '',
+    selfAssessment: '',
     email: '',
     phone: '',
     company: '',
     teamSize: '',
-    needLevel: '',
-    urgency: '',
-    otherPeople: ''
   });
   const [isFinished, setIsFinished] = useState(false);
 

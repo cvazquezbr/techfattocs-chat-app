@@ -8,15 +8,34 @@ export const questions = [
   {
     id: 'name',
     type: 'input',
-    text: 'Perfeito! Para começar, preciso de algumas informações.\n\nQual é o seu nome completo?',
-    placeholder: 'Digite seu nome completo',
+    text: 'Perfeito! Para começar, por qual nome posso te chamar?',
+    placeholder: '',
     field: 'name'
+  },
+ {
+    id: 'need',
+    type: 'input',
+    text: 'Prazer em conhecê-lo! 👋\n\nPara poder melhor te atender, você poderia resumir o que pretende atingir... qual sua necessidade?',
+    placeholder: '',
+    field: 'need'
+  },
+  {
+    id: 'selfAssessment',
+    type: 'options',
+    text: 'Se tivesse de escolher uma opção, qual delas melhor descreveria sua situação atual?',
+    options: [
+      'Capacidade interna de gestão de equipes técnicas',
+      'Visão para um App ou solução digital', 
+      'Já há uma especificação de solução',
+      'Muito trabalho manual, apesar (ou porque) de muitas aplicações',
+    ],
+    field: 'selfAssessment'
   },
   {
     id: 'email',
     type: 'input',
-    text: 'Prazer em conhecê-lo! 👋\n\nQual é o seu email comercial?',
-    placeholder: 'Digite seu email',
+    text: 'Qual é o seu email comercial?',
+    placeholder: '',
     inputType: 'email',
     field: 'email'
   },
@@ -46,39 +65,6 @@ export const questions = [
       'Mais de 100'
     ],
     field: 'teamSize'
-  },
-  {
-    id: 'needLevel',
-    type: 'options',
-    text: 'Como você avalia a necessidade da nossa solução para sua empresa?',
-    options: [
-      'Baixa',
-      'Média',
-      'Alta'
-    ],
-    field: 'needLevel'
-  },
-  {
-    id: 'urgency',
-    type: 'options',
-    text: 'Com que urgência você acha que sua empresa precisa de uma solução como a nossa?',
-    options: [
-      'Imediato',
-      'Curto prazo',
-      'Médio prazo', 
-      'Longo prazo'
-    ],
-    field: 'urgency'
-  },
-  {
-    id: 'otherPeople',
-    type: 'options',
-    text: 'Existem outras pessoas na empresa que precisam saber sobre a solução?',
-    options: [
-      'Sim',
-      'Não'
-    ],
-    field: 'otherPeople'
   },
   {
     id: 'finish',
