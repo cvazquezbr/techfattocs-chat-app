@@ -33,10 +33,10 @@ class AgendorService {
   formatPersonData(formData) {
     const personData = {
       name: formData.name,
-      contact: {
-        email: formData.email,
-        work: formData.phone
-      },
+      contact: [
+        { type: 'email', value: formData.email },
+        { type: 'work', value: formData.phone }
+      ],
       description: this.buildDescription(formData),
       customFields: {
         'tamanho_equipe': formData.teamSize,
@@ -49,7 +49,7 @@ class AgendorService {
     // Se tiver nome da empresa, adiciona como organização
     if (formData.company) {
       personData.organization = {
-        name: formData.company
+        name: formData.company,
       };
     }
 
