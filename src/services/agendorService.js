@@ -1,6 +1,4 @@
 // Serviço de integração com a API do Agendor
-const AGENDOR_API_BASE = import.meta.env.VITE_AGENDOR_API_BASE || 'https://api.agendor.com.br';
-
 class AgendorService {
   constructor(apiToken) {
     this.apiToken = apiToken;
@@ -10,31 +8,10 @@ class AgendorService {
     };
   }
 
-  // Criar uma nova pessoa no Agendor
-  async createPerson(personData) {
-    try {
-      const response = await fetch(`/api/people`, {
-        method: 'POST',
-        headers: this.headers,
-        body: JSON.stringify(personData)
-      });
-
-      if (!response.ok) {
-        throw new Error(`Erro na API do Agendor: ${response.status} - ${response.statusText}`);
-      }
-
-      const result = await response.json();
-      return result;
-    } catch (error) {
-      console.error('Erro ao criar pessoa no Agendor:', error);
-      throw error;
-    }
-  }
-
   // Criar ou atualizar uma pessoa (upsert)
   async upsertPerson(personData) {
     try {
-      const response = await fetch(`/api/people/upsert`, {
+      const response = await fetch(`/api/v3/people`, {
         method: 'POST',
         headers: this.headers,
         body: JSON.stringify(personData)
