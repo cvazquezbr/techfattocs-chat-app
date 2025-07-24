@@ -1,12 +1,8 @@
-import { motion } from 'framer-motion';
 import { User, Bot } from 'lucide-react';
 
-const MessageBubble = ({ message, isBot = true, delay = 0 }) => {
+const MessageBubble = ({ message, isBot = true }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay }}
+    <div
       className={`flex items-start gap-3 mb-4 ${isBot ? 'justify-start' : 'justify-end'}`}
     >
       {isBot && (
@@ -30,7 +26,7 @@ const MessageBubble = ({ message, isBot = true, delay = 0 }) => {
           <User className="w-4 h-4 text-white" />
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 // Serviço de integração com a API do Agendor
-const AGENDOR_API_BASE = 'https://api.agendor.com.br';
+const AGENDOR_API_BASE = import.meta.env.VITE_AGENDOR_API_BASE || 'https://api.agendor.com.br';
 
 class AgendorService {
   constructor(apiToken) {
@@ -13,7 +13,7 @@ class AgendorService {
   // Criar uma nova pessoa no Agendor
   async createPerson(personData) {
     try {
-      const response = await fetch(`${AGENDOR_API_BASE}/people`, {
+      const response = await fetch(`/api/people`, {
         method: 'POST',
         headers: this.headers,
         body: JSON.stringify(personData)
@@ -34,7 +34,7 @@ class AgendorService {
   // Criar ou atualizar uma pessoa (upsert)
   async upsertPerson(personData) {
     try {
-      const response = await fetch(`${AGENDOR_API_BASE}/people/upsert`, {
+      const response = await fetch(`/api/people/upsert`, {
         method: 'POST',
         headers: this.headers,
         body: JSON.stringify(personData)
