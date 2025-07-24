@@ -14,10 +14,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': {
-        target: 'https://api.agendor.com.br',
+      '/api/v3': {
+        target: 'https://api.agendor.com.br/v3',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api\/v3/, ''),
       },
     },
   },
