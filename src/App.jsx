@@ -132,11 +132,11 @@ function App() {
   };
 
   return (
-    <div className="h-screen bg-gray-100">
-      <div className="h-full max-w-4xl mx-auto bg-white shadow-lg">
+    <div className="h-screen">
+      <div className="h-full max-w-4xl mx-auto shadow-lg">
         {/* Progress Bar */}
         {!isFinished && currentQuestion.type !== 'message' && (
-          <div className="p-4 bg-white border-b">
+          <div className="p-4 border-b">
             <ProgressBar 
               current={currentQuestionIndex} 
               total={totalQuestions - 2} // Exclui welcome e finish

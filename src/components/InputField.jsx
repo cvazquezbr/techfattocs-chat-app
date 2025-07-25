@@ -42,7 +42,7 @@ const InputField = ({
             <Button
               onClick={() => handleOptionClick(option)}
               variant="outline"
-              className="w-full justify-start text-left h-auto py-3 px-4 hover:bg-blue-50 hover:border-blue-300"
+              className="w-full justify-start text-left h-auto py-3 px-4"
               disabled={disabled}
             >
               {option}
@@ -72,7 +72,7 @@ const InputField = ({
       <Button 
         type="submit" 
         disabled={!value.trim() || disabled}
-        className="px-3"
+        className="px-3 bg-green-500 hover:bg-green-600"
       >
         <Send className="w-4 h-4" />
       </Button>

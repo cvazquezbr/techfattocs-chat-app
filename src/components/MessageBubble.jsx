@@ -14,8 +14,9 @@ const MessageBubble = ({ message, isBot = true }) => {
       <div
         className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
           isBot
-            ? 'bg-gray-100 text-gray-800 rounded-bl-sm'
-            : 'bg-blue-600 text-white rounded-br-sm'
+            ? 'bg-white text-gray-800 rounded-bl-sm'
+            : 'bg-green-100 text-gray-800 rounded-br-sm'
+    
         }`}
       >
         <p className="text-sm leading-relaxed whitespace-pre-wrap">{message}</p>
