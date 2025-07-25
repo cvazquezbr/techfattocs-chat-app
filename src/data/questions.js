@@ -48,8 +48,8 @@ Podemos fazer algumas perguntas rápidas para entender melhor suas necessidades?
   {
     id: 'phone',
     type: 'input',
-    text: 'Qual é o seu número de telefone (com código do país)?',
-    placeholder: '+55 11 99999-9999',
+    text: 'Qual é o seu número de telefone?',
+    placeholder: '(11)99999-9999',
     field: 'phone'
   },
   {

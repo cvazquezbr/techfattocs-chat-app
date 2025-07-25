@@ -109,7 +109,7 @@ O aplicativo utiliza a API REST do Agendor para:
   name: "Nome do Lead",
   contact: {
     email: "email@empresa.com",
-    work: "+5511999999999"
+    work: "(11)999999999"
   },
   organization: {
     name: "Nome da Empresa"

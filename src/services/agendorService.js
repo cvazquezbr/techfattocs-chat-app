@@ -23,18 +23,38 @@ class AgendorService {
     return res.json();
   }
 
+  formatPhone(phone) {
+    const digits = phone.replace(/\D/g, '');
+
+    if (digits.length === 0) return '';
+
+    if (digits.length <= 2) {
+      return `(${digits}`;
+    } else if (digits.length <= 6) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    } else if (digits.length <= 10) {
+      // Fixo ou incompleto
+      return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+    } else {
+      // Celular completo (ou mais que 11, corta o excedente)
+      return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+    }
+  }
   formatPersonData(formData) {
+
+
+
     const personData = {
       name: formData.name,
       contact: {
         email: formData.email,
-        work: formData.phone,
+        work: this.formatPhone(formData.phone),
       },
       description: this.buildDescription(formData),
       customFields: {
         necessidade: formData.need,
-        auto_avaliacao: formData.selfAssessment, 
-        tamanho_equipe: formData.teamSize ,
+        auto_avaliacao: formData.selfAssessment,
+        tamanho_equipe: formData.teamSize,
       },
     };
 
