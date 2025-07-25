@@ -7,10 +7,7 @@ import { createAgendorService } from './services/agendorService';
 import './App.css';
 
 // Token da API do Agendor (em produção, isso deveria vir de variáveis de ambiente)
-//const AGENDOR_API_TOKEN = process.env.REACT_APP_AGENDOR_TOKEN || null;
 const AGENDOR_API_TOKEN = import.meta.env.VITE_AGENDOR_API_TOKEN || null;
-
-
 function App() {
   const [currentQuestionId, setCurrentQuestionId] = useState('welcome');
   const [messages, setMessages] = useState([]);
@@ -21,7 +18,6 @@ function App() {
     selfAssessment: '',
     email: '',
     phone: '',
-    company: '',
     teamSize: '',
   });
   const [isFinished, setIsFinished] = useState(false);
@@ -34,7 +30,7 @@ function App() {
     // Adiciona a primeira mensagem após um pequeno delay
     const timer = setTimeout(() => {
       addBotMessage(currentQuestion.text);
-    }, 500);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, []);
@@ -46,7 +42,7 @@ function App() {
     setTimeout(() => {
       setMessages(prev => [...prev, { text, isBot: true }]);
       setIsTyping(false);
-    }, 1000 + text.length * 20); // Tempo baseado no tamanho da mensagem
+    }, 300 + text.length * 20); // Tempo baseado no tamanho da mensagem
   };
 
   const addUserMessage = (text) => {
@@ -160,4 +156,3 @@ function App() {
 }
 
 export default App;
-

@@ -2,7 +2,13 @@ export const questions = [
   {
     id: 'welcome',
     type: 'message',
-    text: '👋 Olá! Bem-vindo à techFATTOcs.\n\nEstamos aqui para ajudá-lo a desenvolver software personalizado ou escalar sua equipe de tecnologia de forma eficiente.\n\nPodemos fazer algumas perguntas rápidas para entender melhor suas necessidades?',
+    text: `👋 Olá! Bem-vindo à techFATTOcs.
+
+Estamos aqui para ajudá-lo a desenvolver aplicações personalizadas ou escalar sua equipe de tecnologia de forma eficiente.
+
+Podemos fazer algumas perguntas rápidas para entender melhor suas necessidades?
+
+🔒 Suas informações estão protegidas pela nossa Política de Privacidade.`,
     options: ['Sim, vamos lá!']
   },
   {
@@ -47,16 +53,9 @@ export const questions = [
     field: 'phone'
   },
   {
-    id: 'company',
-    type: 'input',
-    text: 'Legal! 😁 Estamos quase lá...\n\nQual é o nome da sua empresa?',
-    placeholder: 'Digite o nome da empresa',
-    field: 'company'
-  },
-  {
     id: 'teamSize',
     type: 'options',
-    text: 'Qual é o tamanho atual da sua equipe?',
+    text: 'Legal! 😁 Estamos quase lá...\n\nQual é o tamanho atual da sua equipe?',
     options: [
       '1 - 10',
       '11 - 25', 

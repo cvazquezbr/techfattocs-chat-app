@@ -25,11 +25,26 @@ const ChatContainer = ({ messages, isTyping, children }) => {
             className="w-8 h-8 object-contain"
           />
         </div>
-        <div>
-          <h2 className="font-semibold text-gray-900">techFATTOcs</h2>
-          <p className="text-sm text-gray-500">Consultoria em Tecnologia</p>
+        <div className="flex-1">
+          <div className="flex justify-between items-start">
+            <div>
+              <h2 className="font-semibold text-gray-900">techFATTOcs</h2>
+              <p className="text-sm text-gray-500">
+                Nós Desenvolvemos Equipes Tech Remotas de Alto Desempenho
+              </p>
+            </div>
+            <a
+              href="https://www.fattocs.com/politica-de-privacidade/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 underline whitespace-nowrap ml-4"
+            >
+              Política de Privacidade
+            </a>
+          </div>
         </div>
       </div>
+
 
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
@@ -46,9 +61,9 @@ const ChatContainer = ({ messages, isTyping, children }) => {
               delay={index * 0.1}
             />
           ))}
-          
+
           {isTyping && <TypingIndicator />}
-          
+
           <div ref={messagesEndRef} />
         </motion.div>
       </div>
