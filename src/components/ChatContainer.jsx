@@ -18,13 +18,15 @@ const ChatContainer = ({ messages, isTyping, children }) => {
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 p-4 flex items-center gap-3">
-        <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-          <img
-            src="https://tech.fattocs.com/wp-content/uploads/2025/04/logo_fatto_1-1.png"
-            alt="Logo FATTO"
-            className="w-8 h-8 object-contain"
-          />
-        </div>
+        <a href="https://tech.fattocs.com" target="_blank" rel="noopener noreferrer">
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+            <img
+              src="https://tech.fattocs.com/wp-content/uploads/2025/04/logo_fatto_1-1.png"
+              alt="Logo FATTO"
+              className="w-8 h-8 object-contain"
+            />
+          </div>
+        </a>
         <div className="flex-1">
           <div className="flex justify-between items-start">
             <div>
