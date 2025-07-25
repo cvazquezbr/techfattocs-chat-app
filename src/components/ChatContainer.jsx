@@ -28,18 +28,20 @@ const ChatContainer = ({ messages, isTyping, children }) => {
           </div>
         </a>
         <div className="flex-1">
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
             <div>
-              <h2 className="font-semibold text-gray-900">techFATTOcs</h2>
-              <p className="text-sm text-gray-500">
-                Nós Desenvolvemos Equipes Tech Remotas de Alto Desempenho
+              <h2 className="font-semibold text-gray-900 text-base sm:text-lg">
+                techFATTOcs
+              </h2>
+              <p className="text-xs sm:text-sm text-gray-500">
+                Desenvolvemos Equipes Tech de Alto Desempenho
               </p>
             </div>
             <a
               href="https://www.fattocs.com/politica-de-privacidade/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-400 underline whitespace-nowrap ml-4"
+              className="text-xs text-gray-400 underline whitespace-nowrap mt-1 sm:mt-0 sm:ml-4 hidden xs:block"
             >
               Política de Privacidade
             </a>
