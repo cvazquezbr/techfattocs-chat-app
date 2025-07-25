@@ -41,7 +41,7 @@ const ChatContainer = ({ messages, isTyping, children }) => {
               href="https://www.fattocs.com/politica-de-privacidade/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-gray-400 underline whitespace-nowrap mt-1 sm:mt-0 sm:ml-4 hidden xs:block"
+              className="text-xs text-gray-400 underline whitespace-nowrap mt-1 sm:mt-0 sm:ml-4 hidden sm:block"
             >
               Política de Privacidade
             </a>
