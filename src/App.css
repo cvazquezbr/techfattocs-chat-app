@@ -130,7 +130,7 @@
   background-image: url('/fundo.png');
   background-size: cover;
   background-position: center;
-  filter: blur(4px);
+  filter: blur(2px);
   z-index: -1;
 }
 

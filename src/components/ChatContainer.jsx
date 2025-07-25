@@ -47,14 +47,12 @@ const ChatContainer = ({ messages, isTyping, children }) => {
 
 
       {/* Messages Area */}
-      
-<div className="flex-1 overflow-y-auto p-4 bg-gray-50 chat-background relative">
-
-
+      <div className="flex-1 overflow-y-auto p-4 chat-background relative">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="max-w-2xl mx-auto"
+          style={{ zIndex: 2 }}
         >
           {messages.map((message, index) => (
             <MessageBubble
