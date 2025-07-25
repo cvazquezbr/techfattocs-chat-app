@@ -24,26 +24,44 @@ class AgendorService {
   }
 
   formatPhone(phone) {
-    const digits = phone.replace(/\D/g, '');
+    // Remove tudo que não é número, mas preserva o "+" se estiver no início
+    const clean = phone.trim().startsWith('+')
+      ? '+' + phone.trim().slice(1).replace(/\D/g, '')
+      : phone.replace(/\D/g, '');
 
-    if (digits.length === 0) return '';
+    let digits = clean;
+    let country = '';
 
+    // Verifica se começa com código do país (ex: +55 ou 0055)
+    if (digits.startsWith('+')) {
+      const match = digits.match(/^\+(\d{1,3})/);
+      if (match) {
+        country = '+' + match[1];
+        digits = digits.slice(match[0].length);
+      }
+    } else if (digits.startsWith('00')) {
+      const match = digits.match(/^00(\d{1,3})/);
+      if (match) {
+        country = '+' + match[1];
+        digits = digits.slice(match[0].length);
+      }
+    }
+
+    // Agora tratamos apenas o número local (DDD + número)
     if (digits.length <= 2) {
-      return `(${digits}`;
+      return `${country} (${digits}`;
     } else if (digits.length <= 6) {
-      return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+      return `${country} (${digits.slice(0, 2)}) ${digits.slice(2)}`;
     } else if (digits.length <= 10) {
-      // Fixo ou incompleto
-      return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+      return `${country} (${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
     } else {
-      // Celular completo (ou mais que 11, corta o excedente)
-      return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
+      // 11 dígitos: celular
+      return `${country} (${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
     }
   }
+
   formatPersonData(formData) {
-
-
-
+    
     const personData = {
       name: formData.name,
       contact: {
